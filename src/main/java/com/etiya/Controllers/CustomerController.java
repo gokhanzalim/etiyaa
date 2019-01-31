@@ -22,7 +22,7 @@ public class CustomerController {
 	
 	
 	    @RequestMapping("customer/new")
-	    public String newProduct(Model model) {
+	    public String newCustomer(Model model) {
 	        model.addAttribute("customer", new Customer());
 	        return "customer_form";
 	    }
@@ -48,12 +48,12 @@ public class CustomerController {
 			
 		}
 	    
-	    @RequestMapping("customer/productadd/{id}")
+	   /* @RequestMapping("customer/productadd/{id}")
 	    public String edit(@PathVariable Integer id, Model model) {
 	    	 model.addAttribute("id", id);
 	    	 
 
 	        model.addAttribute("customer", customerService.getCustomerById(id));
 	        return "product_form";
-	    }
+	    }*/
 }

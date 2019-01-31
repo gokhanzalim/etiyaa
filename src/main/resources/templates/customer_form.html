@@ -4,14 +4,14 @@
 <meta charset="UTF-8" />
     <title>Customer Form</title>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">>
- 
+
 </head>
 <body>
 <div class="container">
 
  <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">Müşteri Kayıt Formu</h1>
+    <h1 class="display-4" style="text-align:center;">Müşteri Kayıt Formu</h1>
   </div>
 </div>
 <form class="form-horizontal" th:object="${customer}" th:action="@{/customer}" method="post">
@@ -35,8 +35,10 @@
     <input type="text" class="form-control"  placeholder="Müşteri Telefon Numarısı" th:field="*{phone}">
   </div>
   
-  <div class="row">
-                <button type="submit" class="btn btn-default">Submit</button>
+  <div class="row" style="float:right;">
+  	<div class="col-sm-4">
+       <button type="submit" class="btn btn-success">Submit</button>
+       </div>
    </div>
 </form>
     </div>

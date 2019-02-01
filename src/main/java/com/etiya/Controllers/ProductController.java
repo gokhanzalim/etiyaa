@@ -42,4 +42,14 @@ public class ProductController {
 		     
 	          return "product_form";
 	    }
+	    
+	   @RequestMapping(value = "customer/productlist", method = RequestMethod.GET)
+	    public String customerList(Model model) {
+	    	
+	      model.addAttribute("products", productService.findByCustomer());
+	      
+	        return "product-list";
+	    }
+	    
+	  
 }

@@ -42,4 +42,10 @@ public class ProductServiceImpl implements ProductService {
 
 	}
 
+	@Override
+	public List<Product> findByCustomer() {
+		// TODO Auto-generated method stub
+		return productRepository.findAll();
+	}
+
 }

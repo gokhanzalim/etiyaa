@@ -2,6 +2,8 @@ package com.etiya.Service;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.Query;
+
 import com.etiya.entities.Product;
 
 public interface ProductService {
@@ -13,4 +15,7 @@ public interface ProductService {
 	 public void saveOrUpdate(Product product);
 	 
 	 public void deleteProductr(long id);
+	 
+	 @Query("SELECT * FROM products t WHERE t.customer_id = 'id'")
+	 public List<Product> findByCustomer();
 }

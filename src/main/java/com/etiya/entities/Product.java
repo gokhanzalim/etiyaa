@@ -37,12 +37,11 @@ public class Product {
 	@Column(name="period")
 	private int period;
 	
-
 	
-	    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-	    @JoinColumn(name = "customer_id", nullable = false)
-	    @JsonIgnore
-	    private Customer customer_id;
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name = "customer_id", nullable = false)
+	@JsonIgnore
+	private Customer customer_id;
 
 	public Integer getId() {
 		return id;
@@ -68,11 +67,6 @@ public class Product {
 		this.serial_number = serial_number;
 	}
 
-	
-
-
-	
-
 	public int getPeriod() {
 		return period;
 	}
@@ -88,8 +82,6 @@ public class Product {
 	public void setCustomer_id(Customer customer_id) {
 		this.customer_id = customer_id;
 	}
-	
-	
 	
 	
 

@@ -35,7 +35,8 @@
                             <td th:text="${customer.address}"></td>
                             <td th:text="${customer.phone}"></td>
                           <td>
-                                <a th:href="${'/customer/productadd/' + customer.id}" class="btn btn-warning eBtn">Ürün Ekle</a>
+                                <a th:href="${'/customer/productadd/' + customer.id}" class="btn btn-success eBtn">Ürün Ekle</a>
+                                <a th:href="${'/customer/productlist/'}" class="btn btn-warning eBtn">Ürünleri Listele</a>
                                 <a th:href="@{delete/(id=${customer.id})}" class="btn btn-danger delBtn">Delete</a>
                             </td>
                         </tr>

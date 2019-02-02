@@ -15,10 +15,13 @@
     
 }
 
-body{
-	    background-color: #e2e2e2;
-}
+
 
 .btn-primary{
 	float:right;
+}
+
+.jumbotron{
+	background-color: #304294 !important;
+    color: white;
 }

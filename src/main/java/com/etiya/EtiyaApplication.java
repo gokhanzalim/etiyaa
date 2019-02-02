@@ -8,6 +8,7 @@ public class EtiyaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(EtiyaApplication.class, args);
+	
 	}
 
 }

@@ -4,14 +4,19 @@
 <meta charset="UTF-8" />
 
     <title>Customer List</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
-
+<link href="/css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
 
   <div class="container">
+   <div class="jumbotron jumbotron-fluid">
+	  <div class="container">
+	    <h1 class="display-4" style="text-align:center;">Customer List</h1>
+	  </div>
+	</div>
         <div class="card">
 
             <div class="card-block">
@@ -23,6 +28,7 @@
                             <th scope="col">Surname</th>
                             <th scope="col">Adress</th>
                             <th scope="col">Telephone</th>
+                            <th scope="col">E-Mail</th>
                             <th scope="col">Process</th>
                         </tr>
                     </thead>
@@ -34,10 +40,11 @@
                             <td th:text="${customer.surname}"></td>
                             <td th:text="${customer.address}"></td>
                             <td th:text="${customer.phone}"></td>
+                            <td th:text="${customer.email}"></td>
                           <td>
                                 <a th:href="${'/customer/productadd/' + customer.id}" class="btn btn-success eBtn">Ürün Ekle</a>
-                                <a th:href="${'/customer/productlist/'}" class="btn btn-warning eBtn">Ürünleri Listele</a>
-                                <a th:href="@{delete/(id=${customer.id})}" class="btn btn-danger delBtn">Delete</a>
+                                <a th:href="${'/customer/productlist/'}" class="btn btn-info eBtn">Ürünleri Listele</a>
+                                <a th:href="${'/customer/edit/'+ customer.id}" class="btn btn-warning delBtn">Edit</a>
                             </td>
                         </tr>
                     </tbody>

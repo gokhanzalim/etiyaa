@@ -3,15 +3,20 @@
 <head lang="UTF-8">
 <meta charset="UTF-8" />
 
-    <title>Customer List</title>
+    <title>Product List</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">>
-    
+  <link href="/css/main.css" rel="stylesheet" type="text/css">  
 
 </head>
 <body>
 
 
   <div class="container">
+     <div class="jumbotron jumbotron-fluid">
+	  <div class="container">
+	    <h1 class="display-4" style="text-align:center;">Product List</h1>
+	  </div>
+	</div>
         <div class="card">
 
             <div class="card-block">
@@ -19,25 +24,26 @@
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Customer Name</th>
-                            <th scope="col">Customer Surname</th>
+                            <th scope="col">Name Surname</th>
                             <th scope="col">Product</th>
-                            <th scope="col">Maintenance Period</th>
-                            
                             <th scope="col">Serial Number</th>
+                            <th scope="col">Maintenance Period</th>
+                            <th scope="col">Buy Date</th>
+                             <th scope="col">Process</th>
                         </tr>
                     </thead>
                     <tbody>
 
                         <tr th:each="product :${products}">
                             <td th:text="${product.id}"></td>
-                            <td th:text="${product.customer_id.name}"></td>
-                            <td th:text="${product.customer_id.surname}"></td>
-                            <td th:text="${product.product_name}"></td>
-                            <td th:text="${product.period}"></td>
-                            
+                            <td th:text="${product.customer_id.name + ' ' + product.customer_id.surname}"></td>
+                            <td th:text="${product.product_name}"></td>                           
                             <td th:text="${product.serial_number}"></td>
-                        
+                            <td th:text="${product.period}+' '+Month"></td>
+                            <td th:text="${product.date}"></td>
+                            <td>
+                                <a th:href="${'/product/issues/' + product.customer_id + '/'+product.id}" class="btn btn-warning eBtn">Process</a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

@@ -2,6 +2,8 @@ package com.etiya.Service;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +12,15 @@ import org.springframework.stereotype.Service;
 import com.etiya.Repositories.ProductRepository;
 import com.etiya.entities.Product;
 
+
 @Service
 @Transactional
 public class ProductServiceImpl implements ProductService {
 
+	@PersistenceContext
+	private EntityManager entityManager;
+
+	
 	@Autowired
 	ProductRepository productRepository;
 	
@@ -47,5 +54,7 @@ public class ProductServiceImpl implements ProductService {
 		// TODO Auto-generated method stub
 		return productRepository.findAll();
 	}
+
+	
 
 }

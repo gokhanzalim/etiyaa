@@ -1,0 +1,23 @@
+body {
+  background: url('https://blackrockdigital.github.io/startbootstrap-creative/img/header.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+
+header.masthead {
+    height: 100vh;
+    min-height: 650px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+header.masthead {
+    padding-top: 8rem;
+    padding-bottom: calc(10rem - 56px);
+    background-image: url(../img/header.jpg);
+    background-position: center center;
+    background-size: cover;
+}

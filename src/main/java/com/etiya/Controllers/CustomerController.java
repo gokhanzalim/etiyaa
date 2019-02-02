@@ -40,20 +40,13 @@ public class CustomerController {
 	      
 	        return "customer-list";
 	    }
-	    
-	    @GetMapping("customer/findOne")
-		@ResponseBody
-		public Customer findOne(Integer id) {
-			return customerService.getCustomerById(id);
-			
-		}
-	    
-	   /* @RequestMapping("customer/productadd/{id}")
-	    public String edit(@PathVariable Integer id, Model model) {
-	    	 model.addAttribute("id", id);
-	    	 
 
+	    
+	 
+	    @RequestMapping("customer/edit/{id}")
+	    public String edit(@PathVariable Integer id, Model model) {
 	        model.addAttribute("customer", customerService.getCustomerById(id));
-	        return "product_form";
-	    }*/
+	        return "customer_form";
+	    }
+
 }

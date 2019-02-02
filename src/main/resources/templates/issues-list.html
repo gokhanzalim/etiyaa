@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="UTF-8">
+<meta charset="UTF-8" />
+
+    <title>Customer List</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">>
+  <link href="/css/main.css" rel="stylesheet" type="text/css">  
+
+</head>
+<body>
+
+
+  <div class="container">
+	  <div class="jumbotron jumbotron-fluid">
+	  <div class="container">
+	    <h1 class="display-4" style="text-align:center;">İssues List</h1>
+	  </div>
+	</div>
+        <div class="card">
+
+            <div class="card-block">
+                <table class="table table-hover table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name Surname</th>
+                            <th scope="col">Ürün</th>
+                            <th scope="col">İşlem Tipi </th>
+                            <th scope="col">İşlem Detayı</th>
+                            <th scope="col">Değişen Parçalar</th>
+                            <th scope="col">İşlem Tarihi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr th:each="issue :${issues}">
+                            <td th:text="${issue.id}"></td>
+                            <td th:text="${issue.customer_id.name + ' ' +issue.customer_id.surname}"></td>
+                            <td th:text="${issue.product_id.product_name  }"></td>
+                            <td th:text="${issue.type}"></td>
+                            <td th:text="${issue.process_details}"></td>
+                    		<td th:text="${issue.changes}"></td>
+                    		<td th:text="${issue.date}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                 <a href="http://localhost:8081/customer/productlist" class="btn btn-info delBtn" style="float:right;">Ürün Listesine Geri Dön</a>
+
+    </div>
+</div>
+
+</body>
+</html>

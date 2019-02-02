@@ -36,14 +36,14 @@ public class ProductController {
 	   
 	    
 	    @RequestMapping("customer/productadd/{id}")
-	    public String edit(@PathVariable Integer id, Model model) {
+	    public String edit(@PathVariable Integer id,Model model) {
 	    	 model.addAttribute("ids", id);
 	    	 model.addAttribute("product", new Product());
 		     
 	          return "product_form";
 	    }
 	    
-	   @RequestMapping(value = "customer/productlist", method = RequestMethod.GET)
+	  @RequestMapping(value = "customer/productlist", method = RequestMethod.GET)
 	    public String customerList(Model model) {
 	    	
 	      model.addAttribute("products", productService.findByCustomer());
@@ -51,5 +51,7 @@ public class ProductController {
 	        return "product-list";
 	    }
 	    
+	   
+	   
 	  
 }

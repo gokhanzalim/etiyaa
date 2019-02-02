@@ -1,9 +1,5 @@
 package com.etiya.entities;
 
-
-
-
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -15,8 +11,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
-
 
 
 @Entity
@@ -43,6 +37,17 @@ public class Product {
 	@JsonIgnore
 	private Customer customer_id;
 
+	@Column(name="buy_date")
+	private String date;
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+	
 	public Integer getId() {
 		return id;
 	}

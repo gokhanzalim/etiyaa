@@ -38,6 +38,9 @@ spring.datasource.password=
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect 
 ```
+
+**Notes:** ``You can create the database by importing the etiya.sql file via mysql workbench or phpmyadmin.Sample data is available in the database.``
+
 # Screenshot
 
 ### Login Page 

@@ -53,7 +53,7 @@ spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
 
 ### Customer Record Page
 
-![customer record page](https://user-images.githubusercontent.com/30948803/52176990-e2e4ca80-27cb-11e9-91fb-f8e5950f24df.png)
+![customer record page](https://user-images.githubusercontent.com/30948803/52182062-38d86300-280a-11e9-9469-7adbb22d6640.png)
 
 ### Customer List Page
 

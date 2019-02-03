@@ -1,55 +1,55 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head lang="UTF-8">
-<meta charset="UTF-8" />
+    <meta charset="UTF-8" />
     <title>Customer Form</title>
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">>
-<link href="/css/main.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">>
+    <link href="/css/main.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-<div class="container">
+    <div class="container">
 
- <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4" style="text-align:center;">Müşteri Kayıt Formu</h1>
-  </div>
-</div>
-<form class="form-horizontal" th:object="${customer}" th:action="@{/customer}" method="post">
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="name">Name</label>
-      <input type="text" class="form-control" placeholder="Müşteri Adı" th:field="*{name}">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4" style="text-align:center;">Customer Record Form</h1>
+            </div>
+        </div>
+        <form class="form-horizontal" th:object="${customer}" th:action="@{/customer}" method="post">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" placeholder="Müşteri Adı" th:field="*{name}">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="surname">Surname</label>
+                    <input type="text" class="form-control" placeholder="Müşteri Soyadı" th:field="*{surname}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="address">Adres</label>
+                <input type="text" class="form-control" placeholder="Yıldız Teknik Üniv..." th:field="*{address}">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Telefon No</label>
+                <input type="text" class="form-control" placeholder="Müşteri Telefon Numarısı" id="phone" name="phone">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Email Adresi</label>
+                <input type="email" class="form-control" placeholder="name@example.com" id="email" name="email">
+            </div>
+
+            <div class="row" style="float:right;">
+                <div class="col-sm-4">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </div>
+        </form>
     </div>
-    <div class="form-group col-md-6">
-      <label for="surname">Surname</label>
-      <input type="text" class="form-control"  placeholder="Müşteri Soyadı" th:field="*{surname}">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="address">Adres</label>
-    <input type="text" class="form-control"  placeholder="Yıldız Teknik Üniv..." th:field="*{address}">
-  </div>
- 
-   <div class="form-group">
-    <label for="phone">Telefon No</label>
-    <input type="text" class="form-control"  placeholder="Müşteri Telefon Numarısı"  id="phone" name="phone">
-  </div>
-  
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Email Adresi</label>
-    <input type="email" class="form-control"  placeholder="name@example.com"  id="email" name="email">
-  </div>
-  
-  <div class="row" style="float:right;">
-  	<div class="col-sm-4">
-       <button type="submit" class="btn btn-success">Submit</button>
-       </div>
-   </div>
-</form>
-    </div>
-
-
-
 
 </body>
+
 </html>

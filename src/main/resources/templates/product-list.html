@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head lang="UTF-8">
-<meta charset="UTF-8" />
+    <meta charset="UTF-8" />
 
     <title>Product List</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">>
-  <link href="/css/main.css" rel="stylesheet" type="text/css">  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">>
+    <link href="/css/main.css" rel="stylesheet" type="text/css">
 
 </head>
+
 <body>
 
-
-  <div class="container">
-     <div class="jumbotron jumbotron-fluid">
-	  <div class="container">
-	    <h1 class="display-4" style="text-align:center;">Product List</h1>
-	  </div>
-	</div>
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4" style="text-align:center;">Product List</h1>
+            </div>
+        </div>
         <div class="card">
 
             <div class="card-block">
@@ -29,7 +30,7 @@
                             <th scope="col">Serial Number</th>
                             <th scope="col">Maintenance Period</th>
                             <th scope="col">Buy Date</th>
-                             <th scope="col">Process</th>
+                            <th scope="col">Process</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -37,7 +38,7 @@
                         <tr th:each="product :${products}">
                             <td th:text="${product.id}"></td>
                             <td th:text="${product.customer_id.name + ' ' + product.customer_id.surname}"></td>
-                            <td th:text="${product.product_name}"></td>                           
+                            <td th:text="${product.product_name}"></td>
                             <td th:text="${product.serial_number}"></td>
                             <td th:text="${product.period}+' '+Month"></td>
                             <td th:text="${product.date}"></td>
@@ -48,8 +49,9 @@
                     </tbody>
                 </table>
 
-    </div>
-</div>
+            </div>
+        </div>
 
 </body>
+
 </html>

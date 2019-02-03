@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 03 Şub 2019, 16:40:01
+-- Üretim Zamanı: 03 Şub 2019, 20:51:39
 -- Sunucu sürümü: 10.1.37-MariaDB
 -- PHP Sürümü: 7.3.0
 
@@ -83,6 +83,7 @@ CREATE TABLE `issues` (
   `id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `type` int(11) NOT NULL,
   `process_details` text NOT NULL,
   `changes` text NOT NULL,
@@ -93,16 +94,17 @@ CREATE TABLE `issues` (
 -- Tablo döküm verisi `issues`
 --
 
-INSERT INTO `issues` (`id`, `customer_id`, `product_id`, `type`, `process_details`, `changes`, `process_date`) VALUES
-(1, 5, 8, 3, 'Ariza tespit edildi', 'Lastik', '2019-02-02 00:56:27'),
-(2, 5, 8, 3, 'Test Edildi', 'Somun', '2019-02-02 00:56:27'),
-(3, 9, 12, 3, 'Genel Bakım', 'Klips', '2019-02-02 00:56:27'),
-(4, 7, 5, 1, 'Genel Bakım', 'Su,tesisat,kondansatör', '2019-02-02 00:56:27'),
-(5, 4, 9, 3, 'Temizlik Yapıldı', 'Havalandırma Filtreleri', '2019-02-07 00:00:00'),
-(6, 4, 9, 2, 'Bozulan parçalar onarıldı', 'elektrik tesisatı', '2019-02-07 00:59:00'),
-(7, 4, 9, 3, 'Arıza giderildi', 'ekran', '2019-02-08 04:59:00'),
-(9, 8, 11, 3, '6 Aylık Bakım Yapıldı', 'Yag,Lastik ve Raflar', '2019-02-12 14:44:00'),
-(12, 10, 14, 2, 'Mekanik parçalar onarıldı', 'Mikroişlemci', '2019-02-02 14:44:00');
+INSERT INTO `issues` (`id`, `customer_id`, `product_id`, `user_id`, `type`, `process_details`, `changes`, `process_date`) VALUES
+(1, 5, 8, 1, 3, 'Ariza tespit edildi', 'Lastik', '2019-02-02 00:56:27'),
+(2, 5, 8, 2, 3, 'Test Edildi', 'Somun', '2019-02-02 00:56:27'),
+(3, 9, 12, 1, 3, 'Genel Bakım', 'Klips', '2019-02-02 00:56:27'),
+(4, 7, 5, 2, 1, 'Genel Bakım', 'Su,tesisat,kondansatör', '2019-02-02 00:56:27'),
+(5, 4, 9, 1, 3, 'Temizlik Yapıldı', 'Havalandırma Filtreleri', '2019-02-07 00:00:00'),
+(6, 4, 9, 2, 2, 'Bozulan parçalar onarıldı', 'elektrik tesisatı', '2019-02-07 00:59:00'),
+(7, 4, 9, 1, 3, 'Arıza giderildi', 'ekran', '2019-02-08 04:59:00'),
+(9, 8, 11, 1, 3, '6 Aylık Bakım Yapıldı', 'Yag,Lastik ve Raflar', '2019-02-12 14:44:00'),
+(12, 10, 14, 2, 2, 'Mekanik parçalar onarıldı', 'Mikroişlemci', '2019-02-02 14:44:00'),
+(22, 6, 7, 2, 1, 'Genel Bakım', 'Yag,Lastik ve Raflar', '2019-02-06 23:24:00');
 
 -- --------------------------------------------------------
 
@@ -170,7 +172,8 @@ ALTER TABLE `customer`
 -- Tablo için indeksler `issues`
 --
 ALTER TABLE `issues`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FKcigc16s3flsg53i2sy0m37e` (`user_id`);
 
 --
 -- Tablo için indeksler `products`
@@ -199,7 +202,7 @@ ALTER TABLE `customer`
 -- Tablo için AUTO_INCREMENT değeri `issues`
 --
 ALTER TABLE `issues`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `products`
@@ -212,6 +215,16 @@ ALTER TABLE `products`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Dökümü yapılmış tablolar için kısıtlamalar
+--
+
+--
+-- Tablo kısıtlamaları `issues`
+--
+ALTER TABLE `issues`
+  ADD CONSTRAINT `FKcigc16s3flsg53i2sy0m37e` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

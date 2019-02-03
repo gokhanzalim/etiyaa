@@ -21,11 +21,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	private DataSource dataSource;
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/**/favicon.ico", "/css/**", "js/**", "/images/**", "/webjars/**", "/login.html").permitAll();
+		http.authorizeRequests().antMatchers("/**/favicon.ico", "/css/**", "js/**", "/images/**", "/webjars/**", "/login.html").permitAll()
+		.and()
+        .logout().deleteCookies("JSESSIONID")  
+        .and()
+        .rememberMe().key("uniqueAndSecret");
+		
 		http.authorizeRequests().anyRequest().authenticated();
 		http.formLogin().loginPage("/login.html").loginProcessingUrl("/login")
 		.failureUrl("/login.html?loginFailed=true");
-		http.rememberMe().userDetailsService(userDetailsService);
 		
 	
 	}

@@ -45,6 +45,14 @@ public class Issues {
 	
 	@Column(name="process_date")
 	private String date;
+	
+	
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name = "user_id", nullable = false)
+	@JsonIgnore
+	private Users user_id;
+	
+	
 
 	public String getDate() {
 		return date;
@@ -101,6 +109,14 @@ public class Issues {
 
 	public void setChanges(String changes) {
 		this.changes = changes;
+	}
+
+	public Users getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(Users user_id) {
+		this.user_id = user_id;
 	}
 
 

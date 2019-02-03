@@ -25,19 +25,19 @@ public class Customer {
 	@Column(name="address")
 	private String address;
 	
-	@Column(name="phone")
-	private int phone;
+	@Column(name="phone",nullable = false, length = 4096)
+	private String phone;
 
 	
 	@Column(name="email")
 	private String email;
 
 	
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 

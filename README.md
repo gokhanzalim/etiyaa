@@ -73,7 +73,7 @@ spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
 
 ### Issues List Page
 
-![issues](https://user-images.githubusercontent.com/30948803/52181821-5e17a200-2807-11e9-913d-4f9a05968f94.png)
+![issues](https://user-images.githubusercontent.com/30948803/52181894-2a894780-2808-11e9-8e7a-8761a749cda6.png)
 
 ### Rest Api
 

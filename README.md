@@ -1,7 +1,7 @@
 # etiyaa
 
 
-Etiya application is a system that records the problems of customers and solution of problems.
+Etiya application is a system that records the problems of customers and solution of problems. This project was developed using Java Spring Boot Framework. 
 
 # What's inside
 
@@ -39,7 +39,7 @@ spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect 
 ```
 
-**Notes:** ``You can create the database by importing the etiya.sql file via mysql workbench or phpmyadmin.Sample data is available in the database.``
+**Notes:** ``You can create the database by importing the Database/etiya.sql file via mysql workbench or phpmyadmin.Sample data is available in the database.``
 
 # Screenshot
 

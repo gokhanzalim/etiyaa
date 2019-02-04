@@ -12,17 +12,35 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.etiya.Service.ProductService;
 import com.etiya.entities.Product;
 
+/**
+ * Product controller.
+ */
 @Controller
 public class ProductController {
 
     @Autowired
     ProductService productService;
 
+    /**
+     * New product
+     * Save product to database.
+     * @param model
+     * @return
+     */
     @RequestMapping(value = "product", method = RequestMethod.POST)
     public String saveCustomer(Product product) {
         productService.saveOrUpdate(product);
         return "redirect:/customer/list";
     }
+    
+    /**
+     * this method returns
+     * the product form
+     *
+     * @param id
+     * @param model
+     * @return
+     */
 
     @RequestMapping("customer/productadd/{id}")
     public String edit(@PathVariable Integer id, Model model) {
@@ -31,6 +49,13 @@ public class ProductController {
 
         return "product_form";
     }
+    
+    /**
+     * List all product
+     *
+     * @param model
+     * @return
+     */
 
     @RequestMapping(value = "customer/productlist", method = RequestMethod.GET)
     public String customerList(Model model) {

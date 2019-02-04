@@ -7,6 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * user entity.
+ */
 @Entity
 @Table(name="users")
 public class Users {

@@ -9,11 +9,24 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.etiya.Service.IssuesService;
 import com.etiya.entities.Issues;
 
+/**
+ * İssues controller.
+ */
 @Controller
 public class IssuesController {
 
     @Autowired
     IssuesService issuesService;
+
+    /**
+     * this method returns
+     * the issues form
+     *
+     * @param id --> Customer id
+     * @param pid --> Product id
+     * @param model
+     * @return
+     */
 
     @RequestMapping("product/issues/{id}/{pid}")
     public String showForm(@PathVariable Integer id, @PathVariable Integer pid, Model model) {
@@ -24,11 +37,26 @@ public class IssuesController {
         return "issues-form";
     }
 
+    
+    /**
+     * New issues, saves customer's product-related problems
+     * Save issues to database.
+     * @param model
+     * @return
+     */
+
     @RequestMapping(value = "issues", method = RequestMethod.POST)
     public String saveCustomer(Issues issues) {
         issuesService.saveOrUpdate(issues);
         return "redirect:/customer/issueslist";
     }
+
+    /**
+     * List all issues
+     *
+     * @param model
+     * @return
+     */
 
     @RequestMapping(value = "customer/issueslist", method = RequestMethod.GET)
     public String customerList(Model model) {

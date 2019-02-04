@@ -16,6 +16,9 @@ import com.etiya.entities.Customer;
 import com.etiya.entities.Issues;
 import com.etiya.entities.Product;
 
+/**
+ * Rest Web Servis controller.
+ */
 @RestController
 @RequestMapping("/rest")
 public class RestControllerEtiya {
@@ -29,6 +32,11 @@ public class RestControllerEtiya {
 	@Autowired
 	IssuesService issuesService;
 	
+	 /**
+     * List all customer
+     *
+     * @return
+     */
 	@RequestMapping(method = RequestMethod.GET, value = "/customers")
 	public ResponseEntity<List<Customer>> getAllCustomer(){
 		
@@ -37,6 +45,12 @@ public class RestControllerEtiya {
 		return ResponseEntity.ok(customers);
 	}
 	
+	 /**
+     * Return one customer
+     *
+     * @param id
+     * @return
+     */
 	@RequestMapping(method = RequestMethod.GET, value = "/customer/{id}")
 	public ResponseEntity<?> getCustomer(@PathVariable("id") Long id) {
 		try {
@@ -47,6 +61,11 @@ public class RestControllerEtiya {
 		}
 	}
 	
+	 /**
+     * List all Products
+     *
+     * @return
+     */
 	@RequestMapping(method = RequestMethod.GET, value = "/products")
 	public ResponseEntity<List<Product>> getAllProducts(){
 		
@@ -55,6 +74,11 @@ public class RestControllerEtiya {
 		return ResponseEntity.ok(products);
 	}
 	
+	 /**
+     * List all Issues
+     *
+     * @return
+     */
 	@RequestMapping(method = RequestMethod.GET, value = "/allIssues")
 	public ResponseEntity<List<Issues>> getAllIssues(){
 		

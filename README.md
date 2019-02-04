@@ -1,7 +1,7 @@
 # etiyaa
 
 
-Etiya application is a system that records the problems of customers and solution of problems. This project was developed using Java Spring Boot Framework. 
+Etiya application is a system that records the problems of customers and solution of problems. This project was developed using Java Spring Boot Framework. Firstly the customer is saved in the database then the product information that the customer has received is saved.Secondly, the customer's problem with the product is saved and the problem is processed. Finally, the faulty parts are repaired and operations are stored in the database.
 
 # What's inside
 
@@ -24,7 +24,7 @@ This project is based on the Spring Boot project and uses these packages :
 # Installation
 
 The project is created with Maven, so you just need to import it to your IDE and build the project to resolve the dependencies. For example,
-Usage (with eclipse): 1 - Clone the project 2 - Eclipse: File -> Import -> Maven -> Existing Maven Projects 3 - Run 4 - Navigate to localhost:8081
+``Usage (with eclipse or Spring Tool Suite): 1 - Clone the project 2 - Eclipse: File -> Import -> Maven -> Existing Maven Projects 3 - Run 4 - Navigate to localhost:8081 ``
 
 # Database configuration
 
@@ -41,6 +41,12 @@ spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
 
 **Notes:** ``You can create the database by importing the database/etiya.sql file via mysql workbench or phpmyadmin.Sample data is available in the database.``
 
+# Server configuration
+
+Necessary adjustments can be made in `` /resources/application.properties``.
+```
+server.port=8081
+```
 # Screenshot
 
 ### Login Page 

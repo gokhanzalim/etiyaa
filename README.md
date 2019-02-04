@@ -43,7 +43,7 @@ spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
 
 # Server configuration
 
-Necessary adjustments can be made in `` /resources/application.properties``.
+Necessary adjustments can be made in `` /resources/application.properties``. This application works by default at ``localhost: 8081``
 ```
 server.port=8081
 ```
